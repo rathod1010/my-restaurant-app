@@ -1,0 +1,95 @@
+package com.restaurant.controller;
+
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.verify;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import java.util.List;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+
+import org.mockito.junit.jupiter.MockitoExtension;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
+import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
+import org.springframework.test.web.servlet.result.MockMvcResultHandlers;
+import org.springframework.test.web.servlet.setup.MockMvcBuilders;
+
+import com.cg.controller.ReservationController;
+import com.cg.model.Reservation;
+import com.cg.model.ResponseBooking;
+import com.cg.model.Restaurant;
+import com.cg.service.ReservationService;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+
+@ExtendWith(MockitoExtension.class)
+public class ReservationControllerTest {
+
+	@Autowired
+	private MockMvc mockMvc;
+
+	@Mock
+	private ReservationService reservationService;
+	private Restaurant restaurant;
+	private Reservation reservation;
+	private ResponseBooking responseBooking;
+	
+
+	@InjectMocks
+	private ReservationController reservationController;
+
+	@BeforeEach
+	public void setUp() {
+		restaurant = new Restaurant(1, "paradise", 35, "veg");
+		reservation= new Reservation(1,3,"22-02-2022","04:00",4,1,2);
+		responseBooking = new ResponseBooking(reservation,restaurant);
+		mockMvc = MockMvcBuilders.standaloneSetup(reservationController).build();
+	}
+
+	@Test
+	void saveRestaurantControllerTest() throws Exception {
+		when(reservationService.bookTable(1, reservation)).thenReturn(responseBooking);
+		mockMvc.perform(
+				post("/reservation/book/table/1").contentType(MediaType.APPLICATION_JSON).content(asJsonString(responseBooking)))
+				.andExpect(status().isCreated());
+		verify(reservationService, times(1)).bookTable(1, reservation);
+
+	}
+
+//	@Test
+//	void getAllRestaurantsControllerTest() throws Exception {
+//		when(restaurantService.getAllRestaurants()).thenReturn(restaurantList);
+//		mockMvc.perform(MockMvcRequestBuilders.get("/restaurant/view/all").contentType(MediaType.APPLICATION_JSON)
+//				.content(asJsonString(restaurant))).andDo(MockMvcResultHandlers.print());
+//		verify(restaurantService, times(1)).getAllRestaurants();
+//
+//	}
+//
+//	@Test
+//	void getRestaurantControllerTest() throws Exception {
+//		when(restaurantService.getRestaurantById(restaurant.getRestaurantId())).thenReturn(restaurant);
+//		mockMvc.perform(MockMvcRequestBuilders.get("/restaurant/view/1").contentType(MediaType.APPLICATION_JSON)
+//				.content(asJsonString(restaurant))).andDo(MockMvcResultHandlers.print());
+//		verify(restaurantService, times(1)).getRestaurantById(1);
+//
+//	}
+
+	public static String asJsonString(final Object obj) {
+		try {
+			final ObjectMapper mapper = new ObjectMapper();
+			final String jsonContent = mapper.writeValueAsString(obj);
+			return jsonContent;
+		} catch (Exception e) {
+			throw new RuntimeException(e);
+		}
+	}
+
+}

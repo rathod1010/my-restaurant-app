@@ -1,0 +1,94 @@
+package com.restaurant.service;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
+
+import java.util.List;
+import java.util.Optional;
+import org.junit.jupiter.api.Test;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.springframework.boot.test.context.SpringBootTest;
+
+import com.cg.exception.BookNotFoundException;
+import com.cg.model.Book;
+import com.cg.repository.BookRepository;
+
+@SpringBootTest
+public class RestaurantServiceTest {
+
+	@InjectMocks
+	private BookService bookService = new BookServiceImplementation();
+
+	@Mock
+	private BookRepository bookRepository;
+
+	@Test
+	void testViewBook() {
+
+		Book book = new Book(1, "king", "raj", 1999, 299);
+
+		Optional<Book> optionalBook = Optional.of(book);
+
+		when(bookRepository.findById(1)).thenReturn(optionalBook);
+
+		Book myBook = bookService.viewBook(1);
+
+		assertEquals("king", myBook.getBookTitle());
+	}
+	
+
+
+	@Test
+	void testGetBookByIdWithException() {
+
+		when(bookRepository.findById(1)).thenThrow(BookNotFoundException.class);
+
+		assertThrows(BookNotFoundException.class, () -> bookService.viewBook(1));
+	}
+
+	@Test
+	void testSaveBook() {
+
+		Book book = new Book();
+		book.setBookId(1);
+		book.setBookTitle("man");
+		book.setAuthorName("rajkumar");
+		book.setBookPublishedYear(1999);
+		book.setBookPrice(199);
+
+		when(bookRepository.save(book)).thenReturn(book);
+
+		Book newBook = bookService.createBook(book);
+
+		assertEquals("man", newBook.getBookTitle());
+
+		verify(bookRepository, times(1)).save(book); // useful for testing void methods
+
+	}
+	
+	
+	@Test
+	void testDeleteBook() {
+		Book book = new Book();
+		book.setBookId(2);
+		book.setBookTitle("dark");
+		book.setAuthorName("kumar");
+		book.setBookPublishedYear(1999);
+		book.setBookPrice(199);
+
+		Optional<Book> optionalBook = Optional.of(book);
+
+		when(bookRepository.findById(2)).thenReturn(optionalBook);
+
+		bookService.deleteBook(2);
+
+		verify(bookRepository, times(1)).findById(2);
+		verify(bookRepository, times(1)).deleteById(2);
+
+	}
+
+}
