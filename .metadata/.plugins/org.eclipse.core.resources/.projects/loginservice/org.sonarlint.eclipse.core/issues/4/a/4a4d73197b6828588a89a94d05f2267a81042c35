@@ -1,4 +1,7 @@
 
-{
-java:S1128"ORemove this unused import 'org.springframework.web.bind.annotation.GetMapping'.(‡¡‰ØHÌRMINORZ
+`
+java:S1128"-Remove this unused import 'java.util.Base64'.(ëŠ»Õ8Ïú ‚«0HãRMINORZ
+CODE_SMELL
+†
+java:S1128"SRemove this unused import 'org.springframework.web.bind.annotation.RequestMapping'.(ö»¿ë8çþÀåª0HåRMINORZ
 CODE_SMELL

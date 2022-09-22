@@ -1,10 +1,26 @@
 
 f
-java:S1874!".Remove this use of "parser"; it is deprecated.(íˆÿºøÿÿÿÿ8ÖÅı¥¦0HÇRMINORZ
+java:S1874#".Remove this use of "parser"; it is deprecated.(íˆÿºøÿÿÿÿ8ÖÅı¥¦0HÙRMINORZ
+CODE_SMELL
+r
+java:S1874?":Remove this use of "SignatureException"; it is deprecated.(‹µ×‡øÿÿÿÿ8Í‡Õ«0HÚRMINORZ
 CODE_SMELL
 m
-java:S1874!"5Remove this use of "setSigningKey"; it is deprecated.(íˆÿºøÿÿÿÿ8ÖÅı¥¦0HÈRMINORZ
+java:S1874#"5Remove this use of "setSigningKey"; it is deprecated.(íˆÿºøÿÿÿÿ8ÖÅı¥¦0HÛRMINORZ
+CODE_SMELL
+m
+java:S1874="5Remove this use of "setSigningKey"; it is deprecated.(¢ßÕıÿÿÿÿ8Í‡Õ«0HÜRMINORZ
+CODE_SMELL
+f
+java:S1874=".Remove this use of "parser"; it is deprecated.(¢ßÕıÿÿÿÿ8Í‡Õ«0HİRMINORZ
+CODE_SMELL
+‰
+java:S1128
+"VRemove this unused import 'org.springframework.security.core.userdetails.UserDetails'.(ÊÁ¥8Í‡Õ«0HŞRMINORZ
+CODE_SMELL
+k
+java:S1144&"3Remove this unused private "isTokenExpired" method.(áÁŠ›ûÿÿÿÿ8¾›şì®0HàRMAJORZ
 CODE_SMELL
 c
-java:S18741"0Remove this use of "signWith"; it is deprecated.(£Áıì8ÖÅı¥¦0HÉRMINORZ
+java:S18743"0Remove this use of "signWith"; it is deprecated.(£Áıì8ÖÅı¥¦0HâRMINORZ
 CODE_SMELL

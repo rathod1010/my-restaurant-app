@@ -1,7 +1,7 @@
 
-l
-java:S1128"9Remove this unused import 'javax.persistence.JoinColumn'.(´Å¼á8—¾ÄÓ¥0H¾RMINORZ
-CODE_SMELL
 j
-java:S1128	"7Remove this unused import 'javax.persistence.OneToOne'.(Ø½ïâ8—¾ÄÓ¥0HÀRMINORZ
+java:S1128	"7Remove this unused import 'javax.persistence.OneToOne'.(Ø½ïâ8°íÒª0H¤RMINORZ
+CODE_SMELL
+l
+java:S1128"9Remove this unused import 'javax.persistence.JoinColumn'.(´Å¼á8—¾ÄÓ¥0H¦RMINORZ
 CODE_SMELL

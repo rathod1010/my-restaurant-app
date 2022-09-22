@@ -19,3 +19,13 @@ h
 8src/main/java/com/cg/service/ReservationServiceImpl.java,e\b\eb3a43134e45e23148fc93f2a3bc2d9e1eedee2c
 <
 build.gradle,f\0\f07866736216be0ee2aba49e392191aeae700a35
+]
+-src/main/java/com/cg/model/LoginResponse.java,c\6\c6a7c8e11aee8098db94826f01cdcc628880a300
+[
++src/main/java/com/cg/model/AuthRequest.java,a\7\a792b2e24c75e37e343e72c807ee7d9cfeaa0c98
+\
+,src/main/java/com/cg/model/AuthResponse.java,2\8\28125ce94511614eb59ab595d69b780792d62a95
+f
+6src/main/java/com/cg/model/AuthenticationResponse.java,b\a\ba90971e5afc421b34d9ae08e3466a0b5d551930
+[
++src/main/java/com/cg/client/AuthClient.java,5\6\56b68d01d05f23d67b3f79e0201e80c75eeab440

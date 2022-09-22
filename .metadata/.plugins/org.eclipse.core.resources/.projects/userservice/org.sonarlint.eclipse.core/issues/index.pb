@@ -27,3 +27,7 @@ a
 1src/test/java/com/cg/service/UserServiceTest.java,8\6\86926279a82c7bb8d12f335945495c665a6a1b0f
 g
 7src/test/java/com/cg/repository/UserRepositoryTest.java,5\c\5cf7113e6b6536520f66ff444b57e63fdf6853d0
+\
+,src/main/java/com/cg/model/LoginRequest.java,7\b\7b38de4769877ff8661161f245bcc197ad5a575e
+]
+-src/main/java/com/cg/model/LoginResponse.java,c\6\c6a7c8e11aee8098db94826f01cdcc628880a300

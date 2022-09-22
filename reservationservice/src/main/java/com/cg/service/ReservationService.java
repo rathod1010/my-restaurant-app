@@ -7,11 +7,12 @@ import com.cg.model.ResponseBooking;
 
 public interface ReservationService {
 	
-	ResponseBooking bookTable(int restaurantId ,Reservation reservation);
+	ResponseBooking bookTable(Reservation reservation);
 	
 	List<Reservation> getReservationsByUser(int userId);
 	
 	void deleteReservation(int reservationId);
+	
 	
 	
 

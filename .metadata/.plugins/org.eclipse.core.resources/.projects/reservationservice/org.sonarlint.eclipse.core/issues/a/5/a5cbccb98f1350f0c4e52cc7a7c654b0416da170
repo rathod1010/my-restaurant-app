@@ -1,7 +1,16 @@
 
-l
-java:S1128"4Remove this unused import 'com.cg.model.Restaurant'.(±ú¿šúÿÿÿÿ8·ªüÏ¦0HÎRMINORZ
+h
+java:S1128"5Remove this unused import 'com.cg.model.AuthRequest'.(÷—ˆ8¯°Ğ†«0HœRMINORZ
 CODE_SMELL
-€
-java:S1128"HRemove this unused import 'org.springframework.web.client.RestTemplate'.(Îö¼Şûÿÿÿÿ8·ªüÏ¦0HĞRMINORZ
+l
+java:S1128"4Remove this unused import 'com.cg.model.Restaurant'.(±ú¿šúÿÿÿÿ8Ûı€«0HRMINORZ
+CODE_SMELL
+b
+java:S3740?"/Provide the parametrized type for this generic.(ø¬ãà8——¢Ò«0H RMAJORZ
+CODE_SMELL
+b
+java:S3740/"/Provide the parametrized type for this generic.(ø¬ãà8¡õ­Ò«0H¡RMAJORZ
+CODE_SMELL
+o
+java:S1128"7Remove this unused import 'com.cg.model.LoginResponse'.(¤¬ßÊıÿÿÿÿ8¯°Ğ†«0H¢RMINORZ
 CODE_SMELL

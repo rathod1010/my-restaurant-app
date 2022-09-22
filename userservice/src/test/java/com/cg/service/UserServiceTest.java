@@ -51,7 +51,7 @@ class UserServiceTest {
 	}
 
 	@Test
-	void testSaveBook() {
+	void testSaveUser() {
 
 		
 		User user = new User(1, "king", "raj@mail.com", 89891999,"kumar","kumar");
@@ -68,7 +68,7 @@ class UserServiceTest {
 	
 	
 	@Test
-	void testDeleteBook() {
+	void testDeleteUser() {
 		
 		User user = new User(2, "king", "raj@mail.com", 89891999,"kumar","kumar");
 

@@ -40,4 +40,11 @@ public class RestaurantServiceImpl implements RestaurantService {
 		return optionalRestaurant.get();
 	}
 
+	@Override
+	public Restaurant searchByRestaurantName(String restaurantName) {
+		
+		Restaurant newRestaurant  = restaurantRepository.findByRestaurantName(restaurantName);
+		return newRestaurant;
+	}
+
 }

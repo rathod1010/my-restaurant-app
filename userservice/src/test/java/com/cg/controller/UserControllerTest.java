@@ -58,7 +58,7 @@ public class UserControllerTest {
 	}
 	
 	@Test
-	void updateBookControllerTest() throws Exception{
+	void updateUserControllerTest() throws Exception{
 		when(userService.updateUser(any())).thenReturn(user);
 		mockMvc.perform(put("/user/update")
 				.contentType(MediaType.APPLICATION_JSON)

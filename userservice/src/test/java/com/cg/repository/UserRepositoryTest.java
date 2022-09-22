@@ -25,7 +25,7 @@ class UserRepositoryTest {
 
 	@Test
 	void givenUserShouldReturnUserObject() {
-		User user1 = new User(2, "king", "raj@mail.com", 89891999,"kumar","kumar");
+		User user1 = new User(2, "Rathod", "raj@mail.com", 89891999,"kumar","kumar");
 		userRepository.save(user1);
 		User user2 = userRepository.findByUsername(user1.getUsername());
 		assertNotNull(user2);
@@ -33,14 +33,14 @@ class UserRepositoryTest {
 	}
 	
 	@Test
-	void getAllMustReturnAllBooks()
+	void getAllMustReturnAllUser()
 	{
 		User a1 = new User(8, "king", "raj@mail.com", 89891999,"ram","kumar");
 		User a2 = new User(7, "aman", "aman@mail.com", 78789,"abc","kumar");
 		userRepository.save(a1);
 		userRepository.save(a2);
 		List<User> userList = (List<User>) userRepository.findAll();
-		assertEquals("king", userList.get(4).getName());
+		assertEquals("Rathod", userList.get(0).getName());
 		
 	}
 	
@@ -59,7 +59,7 @@ class UserRepositoryTest {
 
 	
 	@Test
-	void testDeleteBook() {
+	void testDeleteUser() {
 		User user4 = new User(3, "ram", "raj@mail.com", 89891999,"kkk","kumar");
 		userRepository.save(user4);
 		userRepository.delete(user4);

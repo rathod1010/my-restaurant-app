@@ -17,5 +17,17 @@ public class GlobalExceptionHandler {
 	public ResponseEntity<String> handleUserAlreadyExistsException(Exception e) {
 		return new ResponseEntity<>(e.getMessage(), HttpStatus.NOT_FOUND);
 	}
+	
+	@ExceptionHandler(value = AuthenticationFailedException.class)
+	public ResponseEntity<String> handleAuthenticationFailedException(Exception e) {
+		ResponseEntity<String> responseEntity = new ResponseEntity<>(e.getMessage(),HttpStatus.UNAUTHORIZED);
+		return responseEntity;
+	}
+	
+	@ExceptionHandler(value = UserNameNotExistingException.class)
+	public ResponseEntity<String> handleUserNotExistingException(Exception e) {
+		ResponseEntity<String> responseEntity = new ResponseEntity<>(e.getMessage(),HttpStatus.NOT_FOUND);
+		return responseEntity;
+	}
 
 }

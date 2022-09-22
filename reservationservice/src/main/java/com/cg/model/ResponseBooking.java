@@ -1,6 +1,9 @@
 package com.cg.model;
 
+
+
 public class ResponseBooking {
+
 
 	private Reservation reservation;
 

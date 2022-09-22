@@ -19,7 +19,7 @@ public class Reservation {
 	private int reservationId;
 
 	@Column(name = "table_no")
-	private int tableNo;
+	private String bookingNum;
 
 	@Column(name = "date")
 	private String date;
@@ -32,23 +32,29 @@ public class Reservation {
 
 	@Column(name = "restaurant_id")
 	private int restaurantId;
+	//Restaurant res;
 
 	@Column(name = "user_id")
 	private int userId;
+    
+	
 
 	
-	public Reservation(int reservationId, int tableNo, String date, String time, int noOfGuests, int restaurantId,
+	
+	public Reservation(int reservationId, String bookingNum, String date, String time, int noOfGuests, int restaurantId,
 			int userId) {
 		super();
 		this.reservationId = reservationId;
-		this.tableNo = tableNo;
+		this.bookingNum = bookingNum;
 		this.date = date;
 		this.time = time;
 		this.noOfGuests = noOfGuests;
 		this.restaurantId = restaurantId;
 		this.userId = userId;
-	}
 	
+	}
+
+
 	public Reservation() {
 		
 	}
@@ -69,12 +75,14 @@ public class Reservation {
 		this.reservationId = reservationId;
 	}
 
-	public int getTableNo() {
-		return tableNo;
+	
+
+	public String getBookingNum() {
+		return bookingNum;
 	}
 
-	public void setTableNo(int tableNo) {
-		this.tableNo = tableNo;
+	public void setBookingNum(String bookingNum) {
+		this.bookingNum = bookingNum;
 	}
 
 	public String getDate() {
@@ -108,5 +116,10 @@ public class Reservation {
 	public void setRestaurantId(int restaurantId) {
 		this.restaurantId = restaurantId;
 	}
+
+	
+
+	
+	
 
 }

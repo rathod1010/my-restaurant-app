@@ -40,9 +40,16 @@ public class RestaurantController {
 
 	@GetMapping("/view/{restaurantId}")
 	public ResponseEntity<Restaurant> fetchRestaurantById(@PathVariable("restaurantId") int restaurantId) {
-
 		Restaurant restaurant = restaurantService.getRestaurantById(restaurantId);
 
 		return new ResponseEntity<>(restaurant, HttpStatus.OK);
 	}
+
+//	@GetMapping("/view/{restaurantName}")
+//	public ResponseEntity<Restaurant> fetchRestaurantByName(@PathVariable("restaurantName") String restaurantName) {
+//
+//		Restaurant restaurant = restaurantService.searchByRestaurantName(restaurantName);
+//
+//		return new ResponseEntity<>(restaurant, HttpStatus.OK);
+//	}
 }

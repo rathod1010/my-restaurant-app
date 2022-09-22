@@ -19,3 +19,9 @@ _
 /src/main/java/com/cg/config/SecurityConfig.java,b\8\b8c4b1bdf9e2f41d6de17799e3a5d40470603f60
 d
 4src/main/java/com/cg/controller/LoginController.java,4\a\4a4d73197b6828588a89a94d05f2267a81042c35
+^
+.src/main/java/com/cg/entity/LoginResponse.java,f\b\fb62d347a03cb1f8d95d497acda61ea8c66daccd
+`
+0src/main/java/com/cg/entity/ValidateService.java,6\c\6c6946241e1eb75db465e65499e1d14241ce4fdb
+g
+7src/main/java/com/cg/entity/AuthenticationResponse.java,8\8\88a87de32e6677b3c42a475affb75298de87fa61

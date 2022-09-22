@@ -25,7 +25,7 @@ class RestaurantRepositoryTest {
 
 	@Test
 	void givenRestaurantShouldReturnRestaurantObject() {
-		Restaurant r1 = new Restaurant(1, "bawarachi", 20, "non veg");
+		Restaurant r1 = new Restaurant(1, "Bawarachi", 20, "non veg");
 		restaurantRepository.save(r1);
 		Restaurant r2 = restaurantRepository.findById(r1.getRestaurantId()).get();
 		assertNotNull(r2);
@@ -36,7 +36,7 @@ class RestaurantRepositoryTest {
 	void testSaveRestaurant()
 	{
 		
-		Restaurant restaurant = new Restaurant(4,"ruchi",40,"veg");
+		Restaurant restaurant = new Restaurant(4,"Mehfil",40,"veg");
 		restaurantRepository.save(restaurant);
 		Restaurant newRestaurant = restaurantRepository.findById(restaurant.getRestaurantId()).get();
 		assertNotNull(newRestaurant);
@@ -48,12 +48,12 @@ class RestaurantRepositoryTest {
 	@Test
 	void getAllMustReturnAllRestaurants()
 	{
-		Restaurant r3 = new Restaurant(3, "paradise", 30, "veg");
-		Restaurant r4 = new Restaurant(6, "abiruchi", 20, "non veg");
+		Restaurant r3 = new Restaurant(3, "Gemini", 30, "veg");
+		Restaurant r4 = new Restaurant(6, "Hyderabadi", 20, "non veg");
 		restaurantRepository.save(r3);
 		restaurantRepository.save(r4);
 		List<Restaurant> restaurantList = (List<Restaurant>) restaurantRepository.findAll();
-		assertEquals("abiruchi", restaurantList.get(4).getRestaurantName());
+		assertEquals("Bawarchi", restaurantList.get(0).getRestaurantName());
 		
 	}
 
